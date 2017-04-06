@@ -108,21 +108,7 @@ public class GoogleSearchTest {
 	    	}
 		Assert.assertTrue(driver.findElement(By.linkText("Новини України")).isDisplayed());
 	}
-	@Test
-	public void testToOpenLinkНовиниУкраїни() {
-		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//try{
-		driver.navigate().to("https://www.google.com.ua/?gws_rd=ssl#q=ukr.net&*");
-		driver.findElement(By.linkText("Новини України")).click();
-		try{
-	    	Thread.sleep(5000);
-	    	}
-	    	catch(InterruptedException ie){
-	    	}
-		Assert.assertTrue(driver.findElement(By.xpath("html/body/div[2]/main/div/header/section[1]/a/img")).isDisplayed());
-	}
+	
 	
 
 }
