@@ -69,45 +69,16 @@ public class GoogleSearchTest {
     //back to google search,
     
     
-	//driver.close();
-	//driver.quit();
+	
+	driver.quit();
 	
 	
 
 	}
-	@Test
-	public void testToOpenLinkПочта() {
-		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//try{
-		driver.navigate().to("https://www.google.com.ua/?gws_rd=ssl#q=ukr.net&*");
-		driver.findElement(By.linkText("Почта @ ukr.net")).click();
-		Assert.assertTrue(driver.findElement(By.linkText("Почта @ ukr.net")).isDisplayed());
+	
 		
-		//}
-		
-		///finally{
-		//driver.close();
-		//driver.quit();
-		//}
-		
-	}
-	@Test
-	public void testToOpenLinkГоловне() {
-		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//try{
-		driver.navigate().to("https://www.google.com.ua/?gws_rd=ssl#q=ukr.net&*");
-		driver.findElement(By.linkText("Головне")).click();
-		try{
-	    	Thread.sleep(5000);
-	    	}
-	    	catch(InterruptedException ie){
-	    	}
-		Assert.assertTrue(driver.findElement(By.linkText("Новини України")).isDisplayed());
-	}
+	
+	
 	
 	
 
