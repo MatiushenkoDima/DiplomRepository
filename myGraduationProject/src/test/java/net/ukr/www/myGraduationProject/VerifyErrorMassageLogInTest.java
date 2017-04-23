@@ -26,16 +26,43 @@ public class VerifyErrorMassageLogInTest {
 		}
 		
 		String actual_error = driver.findElement(By.xpath("//*[@id='login-block']/div/div[2]/div[1]")).getText();
-		//String expected_error="Не вірний логін або пароль. Спробуйте знову.";
-		
-		
-		
+		//String expected_error="Не вірний логін або пароль. Спробуйте знову."; Старая версия 
+		//String expected_error="Неправильно вказано логін чи пароль. Спробуйте знову."; Новая версия 
 		Assert.assertTrue(actual_error.contains("Неправильно вказано логін чи пароль. Спробуйте знову."));
+		System.out.println("Error message verifyed!");
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		//Чому я не можу увійти у свою поштову скриньку? Link
 		
 		
-		System.out.println("Error message verifyed , test completed !");
+		
+		String link = driver.findElement(By.xpath("//*[@id='login-block']/div/div[2]/div[2]/a")).getText();
+		Assert.assertTrue(link.contains("Чому я не можу увійти у свою поштову скриньку?"));
+		System.out.println("Link verifyed!");
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		//Open link. and verify.
 		
 		
+		
+		driver.findElement(By.xpath("//*[@id='login-block']/div/div[2]/div[2]/a")).click();
+		driver.findElement(By.xpath("//*[@id='firstHeading']/span")).getText().equals("Error auth");
+		System.out.println("Link work fine!");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.quit();
 
 	}
