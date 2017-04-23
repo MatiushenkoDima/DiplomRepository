@@ -30,7 +30,7 @@ public class VerifyErrorMassageLogInTest {
 		
 		
 		
-		Assert.assertTrue(actual_error.contains("Не вірний логін або пароль. Спробуйте знову."));
+		Assert.assertTrue(actual_error.contains("Неправильно вказано логін чи пароль. Спробуйте знову."));
 		
 		
 		System.out.println("Error message verifyed , test completed !");
