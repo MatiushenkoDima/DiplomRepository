@@ -1,5 +1,9 @@
 package net.ukr.www.myGraduationProject;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LogInTest {
 @Test
-	public  void LogIn() {
+	public  void LogIn() throws Exception {
 		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -105,9 +109,27 @@ public class LogInTest {
 				}
 				
 				
-				//Uploading file (Файл)
+				//Uploading file (Файл) Robot Class
+				Robot robot = new Robot();
+				driver.findElement(By.xpath("//*[@id='screens']/div/div[2]/section[2]/div[2]/label/button")).click();
 				
-			driver.findElement(By.xpath("html/body/div[1]/div[2]/div/div/div[2]/section[2]/div[2]/label/button")).sendKeys("C:\\Users\\Dima\\Desktop\\diplom.txt");
+				robot.setAutoDelay(2000);
+				
+				StringSelection selection = new StringSelection("C:\\Users\\Dima\\Desktop\\diplom.txt");
+		        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection,null);
+		        
+		        robot.setAutoDelay(1000);
+		        
+		        robot.keyPress(KeyEvent.VK_CONTROL);
+		        robot.keyPress(KeyEvent.VK_V);
+		 
+		        robot.keyRelease(KeyEvent.VK_CONTROL);
+		        robot.keyRelease(KeyEvent.VK_V);
+		        
+		        robot.setAutoDelay(1000);
+		        
+		        robot.keyPress(KeyEvent.VK_ENTER);
+		        robot.keyRelease(KeyEvent.VK_ENTER);
 				
 				
 				
@@ -152,7 +174,7 @@ public class LogInTest {
 				
 				
 				
-				
+				driver.close();
 				//driver.quit();
 	}
 
