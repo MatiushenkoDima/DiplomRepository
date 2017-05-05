@@ -126,13 +126,72 @@ public class LogInTest {
 		        robot.keyRelease(KeyEvent.VK_CONTROL);
 		        robot.keyRelease(KeyEvent.VK_V);
 		        
-		        robot.setAutoDelay(1000);
+		        robot.setAutoDelay(3000);
 		        
 		        robot.keyPress(KeyEvent.VK_ENTER);
 		        robot.keyRelease(KeyEvent.VK_ENTER);
+		        
+		        robot.setAutoDelay(4000);
+		        
+		        System.out.println("The (diplom.txt) file was uploaded !");
 				
+		        
+		        
+		        //Text field
+		         driver.findElement(By.xpath("//*[@id='screens']/div/div[2]/section[3]/div/div[3]")).sendKeys("Diplom 2017");
+		         System.out.println("Text field works fine ! ");
+		         
+		         Thread.sleep(5000);
+		         
+		       // Send letter
+		         driver.findElement(By.xpath("//*[@id='screens']/div/div[1]/div/button")).click();
+		         System.out.println("Send letter works fine ! ");
+		         
+		         Thread.sleep(5000);
+		         
+		         
+		        
 				
-				
+		        //Click Вхідні
+		         driver.findElement(By.xpath("//*[@id='0']/span[4]")).click();
+		         System.out.println("Вхідні works fine ! ");
+		         
+		         Thread.sleep(1000);
+		       //Click Чернетки
+		         driver.findElement(By.xpath("//*[@id='10002']/span[4]")).click();
+		         System.out.println("Чернетки works fine ! ");
+		         
+		         Thread.sleep(1000);
+		       //Click Надіслані
+		         driver.findElement(By.xpath("//*[@id='10001']/span[4]")).click();
+		         System.out.println("Надіслані works fine ! ");
+		         
+		         Thread.sleep(1000);
+		       //Click Спам
+		         driver.findElement(By.xpath("//*[@id='10003']/span[4]")).click();
+		         System.out.println("Спам works fine ! ");
+		         
+		         Thread.sleep(1000);
+		       //Click Видалені
+		         driver.findElement(By.xpath("//*[@id='10004']/span[4]")).click();
+		         System.out.println("Видалені works fine ! ");
+		         
+		         Thread.sleep(1000);
+		       //Click Непрочитані
+		         driver.findElement(By.xpath("//*[@id='unread']/span[4]")).click();
+		         System.out.println("Непрочитані works fine ! ");
+		         
+		         Thread.sleep(1000);
+		       //Click Відмічені
+		         driver.findElement(By.xpath("//*[@id='marked']/span[4]")).click();
+		         System.out.println("Відмічені works fine ! ");
+		         
+		         Thread.sleep(1000);
+		       //Click Вкладення
+		         driver.findElement(By.xpath("//*[@id='content']/aside/div[2]/div[1]/div[1]/section[4]/div/a/span[3]")).click();
+		         System.out.println("Вкладення works fine ! ");
+		         
+		         Thread.sleep(1000);
 				
 				
 				
