@@ -26,7 +26,7 @@ public class GoogleSearchTest {
 	public void testToSerchOpenAssertMain() {
 	System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 	WebDriver driver = new FirefoxDriver();
-	//driver.manage().window().maximize();
+	driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	driver.get("https://www.google.com.ua");
 	
@@ -37,39 +37,44 @@ public class GoogleSearchTest {
 	String cssOfInputField = "input[name='q']";
     WebElement inputFieldQ = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssOfInputField)));
     try{
-    	Thread.sleep(4000);
+    	Thread.sleep(3000);
     	}
     	catch(InterruptedException ie){
     	}
     inputFieldQ.sendKeys("ukr.net");
     
+    System.out.println("ukr.net input");
     
     String cssOfSearchButton = "button[name='btnG']";
     
     WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssOfSearchButton)));
     searchButton.click();
     try{
+    	Thread.sleep(2000);
+    	}
+    	catch(InterruptedException ie){
+    	}
+    System.out.println("search");
+ // search results page
+   
+    driver.findElement(By.xpath("//*[@id='rso']/div[1]/div/div/div/div/h3/a")).click();
+    try{
     	Thread.sleep(3000);
     	}
     	catch(InterruptedException ie){
     	}
-    
- // search results page
-   
-    driver.findElement(By.xpath("//*[@id='rso']/div[1]/div/div/div/h3/a")).click();
-    try{
-    	Thread.sleep(5000);
-    	}
-    	catch(InterruptedException ie){
-    	}
+    System.out.println("search results");
     //Accert na main page
     
-    Assert.assertTrue(driver.findElement(By.xpath("html/body/div[2]/main/div/header/section[1]/a/img")).isDisplayed());
-
-    //back to google search,
+    String ukr_title=driver.getTitle();
     
-    
+    System.out.println("Title is " + ukr_title);
 	
+	Assert.assertTrue(ukr_title.contains("Всі новини України, останні новини дня в Україні та Світі"));
+	
+	System.out.println("Page Verified!");
+    
+    
 	driver.quit();
 	
 	
