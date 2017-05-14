@@ -20,10 +20,17 @@ public class AssertTitleTest {
 		
 		//Actual Title
 		String ukr_title=driver.getTitle();
-		System.out.println("Title is" + ukr_title);
+		System.out.println("Title is " + ukr_title);
+		
 		Assert.assertTrue(ukr_title.contains("Всі новини України, останні новини дня в Україні та Світі"));
 		
 		System.out.println("Page Verified!");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 		
 		driver.quit();
 		
