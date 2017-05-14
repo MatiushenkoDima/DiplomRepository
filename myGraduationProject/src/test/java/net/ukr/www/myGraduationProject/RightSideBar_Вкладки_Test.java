@@ -14,13 +14,15 @@ public class RightSideBar_Вкладки_Test {
 	
 	System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 	WebDriver driver = new FirefoxDriver();
+	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
 	driver.get("https://www.ukr.net/");
 	
 	//Weather Button---------------------------------------------------------------------
 	driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[1]")).getText().equals("Погода");
-	System.out.println("вкладка Погода найдена!");
+	System.out.println("Вкладка Погода найдена!");
+	
 	driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[1]")).click();
 	System.out.println("Clickable Weather");
 	
@@ -31,7 +33,7 @@ public class RightSideBar_Вкладки_Test {
 	}
 	//Сurrency Button---------------------------------------------------------------------
 	driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[2]")).getText().equals("Валюта");
-	System.out.println("вкладка Валюта найдена!");
+	System.out.println("Вкладка Валюта найдена!");
 	
 	driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[2]")).click();
 	System.out.println("Clickable Сurrency");
@@ -43,7 +45,7 @@ public class RightSideBar_Вкладки_Test {
 	}
 	//Fuel Button---------------------------------------------------------------------
 	driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[3]")).getText().equals("Пальне");
-	System.out.println("вкладка Пальне найдена!");
+	System.out.println("Вкладка Пальне найдена!");
 	
 	driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[3]")).click();
 	System.out.println("Clickable Fuel");
@@ -55,7 +57,7 @@ public class RightSideBar_Вкладки_Test {
 	}
 	//Horoscopes Button---------------------------------------------------------------------
 		driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[4]")).getText().equals("Гороскопы");
-		System.out.println("вкладка Гороскопы найдена!");
+		System.out.println("Вкладка Гороскопы найдена!");
 		
 		driver.findElement(By.xpath("html/body/div[2]/main/div[2]/div[1]/section/ul/li[4]")).click();
 		System.out.println("Clickable Horoscopes");
@@ -68,6 +70,7 @@ public class RightSideBar_Вкладки_Test {
 	
 	System.out.println("All is Ok! ");
 	
+	driver.close();
 	driver.quit();
 	}
 
