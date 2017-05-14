@@ -16,7 +16,7 @@ public class IntegralSearchUkr_netTest {
 		
 		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://www.ukr.net/");
 		
@@ -27,11 +27,13 @@ public class IntegralSearchUkr_netTest {
 		String cssOfInputField = "input[name='q']";
 	    WebElement inputFieldQ = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssOfInputField)));
 	    try{
-	    	Thread.sleep(4000);
+	    	Thread.sleep(2500);
 	    	}
 	    	catch(InterruptedException ie){
 	    	}
 	    inputFieldQ.sendKeys("ukr.net");
+	    
+		System.out.println("Input ukr.net ");
 		
 		/////////////////////////////// Button Search
 	    
@@ -42,13 +44,19 @@ public class IntegralSearchUkr_netTest {
 	    WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xPathOfSearchButton)));
 	    searchButton.click();
 	    try{
-	    	Thread.sleep(3000);
+	    	Thread.sleep(2000);
 	    	}
 	    	catch(InterruptedException ie){
 	    	}
 		
+	    System.out.println("Search button click");
 
-		
+	    try{
+	    	Thread.sleep(2000);
+	    	}
+	    	catch(InterruptedException ie){
+	    	}
+	    System.out.println("Search works ");
 		driver.close();
 		driver.quit();
 	}
