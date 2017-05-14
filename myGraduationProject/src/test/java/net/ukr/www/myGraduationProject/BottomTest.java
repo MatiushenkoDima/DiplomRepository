@@ -4,20 +4,36 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Test;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
+
+
 public class BottomTest {
+
 @Test
+
 	public  void testSupportUsers() {
 	System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 	WebDriver driver = new FirefoxDriver();
+	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
 	driver.navigate().to("https://www.ukr.net/");
 	
+	JavascriptExecutor jse = (JavascriptExecutor)driver;
+	jse.executeScript("window.scrollBy(0,3500)", "");
 	
+	try {
+		Thread.sleep(2000);
+	} catch (InterruptedException e) {
+		
+		e.printStackTrace();
+	}
 
 	String linksupport = driver.findElement(By.linkText("Підтримка користувачів")).getText();
 	Assert.assertTrue(linksupport.contains("Підтримка користувачів"));
@@ -52,9 +68,15 @@ public class BottomTest {
 public void testConfidentiality(){
 		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		driver.navigate().to("https://www.ukr.net/");
+		
+		
+		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,3500)", "");
 		
 		
 
@@ -89,9 +111,15 @@ public void testConfidentiality(){
 public void testlineNews(){
 		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		driver.navigate().to("https://www.ukr.net/");
+		
+		
+		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,3500)", "");
 		
 		
 
@@ -125,9 +153,15 @@ public void testlineNews(){
 public void testconnectlineNews(){
 	System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 	WebDriver driver = new FirefoxDriver();
+	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
 	driver.navigate().to("https://www.ukr.net/");
+	
+	
+	
+	JavascriptExecutor jse = (JavascriptExecutor)driver;
+	jse.executeScript("window.scrollBy(0,3500)", "");
 	
 	
 
@@ -162,9 +196,15 @@ public void testconnectlineNews(){
 public void testadvertising(){
 	System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 	WebDriver driver = new FirefoxDriver();
+	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
 	driver.navigate().to("https://www.ukr.net/");
+	
+	
+	
+	JavascriptExecutor jse = (JavascriptExecutor)driver;
+	jse.executeScript("window.scrollBy(0,3500)", "");
 	
 	
 
