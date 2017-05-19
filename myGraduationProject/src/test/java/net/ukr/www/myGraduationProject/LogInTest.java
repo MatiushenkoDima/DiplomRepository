@@ -19,6 +19,7 @@ public class LogInTest {
 	public  void LogIn() throws Exception {
 		System.setProperty("webdriver.gecko.driver","D:\\SeleniumHQ\\gecodriver\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		driver.get("https://www.ukr.net/");
@@ -118,7 +119,7 @@ public class LogInTest {
 				StringSelection selection = new StringSelection("C:\\Users\\Dima\\Desktop\\diplom.txt");
 		        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection,null);
 		        
-		        robot.setAutoDelay(1000);
+		        robot.setAutoDelay(2000);
 		        
 		        robot.keyPress(KeyEvent.VK_CONTROL);
 		        robot.keyPress(KeyEvent.VK_V);
@@ -126,28 +127,29 @@ public class LogInTest {
 		        robot.keyRelease(KeyEvent.VK_CONTROL);
 		        robot.keyRelease(KeyEvent.VK_V);
 		        
-		        robot.setAutoDelay(3000);
+		        robot.setAutoDelay(2000);
 		        
 		        robot.keyPress(KeyEvent.VK_ENTER);
 		        robot.keyRelease(KeyEvent.VK_ENTER);
 		        
-		        robot.setAutoDelay(4000);
+		        robot.setAutoDelay(2000);
 		        
 		        System.out.println("The (diplom.txt) file was uploaded !");
-				
+		        
+		        robot.setAutoDelay(1000);
 		        
 		        
 		        //Text field
 		         driver.findElement(By.xpath("//*[@id='screens']/div/div[2]/section[3]/div/div[3]")).sendKeys("Diplom 2017");
 		         System.out.println("Text field works fine ! ");
 		         
-		         Thread.sleep(5000);
+		         Thread.sleep(2000);
 		         
 		       // Send letter
 		         driver.findElement(By.xpath("//*[@id='screens']/div/div[1]/div/button")).click();
 		         System.out.println("Send letter works fine ! ");
 		         
-		         Thread.sleep(5000);
+		         Thread.sleep(6000);
 		         
 		         
 		        
@@ -194,47 +196,20 @@ public class LogInTest {
 		         Thread.sleep(1000);
 				
 				
+				//Log out
+		         
+		    //  driver.navigate().back();
+		      
+		   
+		      
+		     // driver.findElement(By.xpath("//*[@id='login-block']/div/div/a")).click();
+		         
+		      //System.out.println("Log out");
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				//Вхідні click
-				//driver.findElement(By.xpath("//div[@class='sidebar__list-item']/a[1]")).click();
-				//driver.findElement(By.xpath("//aside[@class='sidebar']/button[@class='default compose']")).click();
-				//Вхідні Verify
-				//String vhidni_title=driver.getTitle();
-				//System.out.println("Title is " + vhidni_title);
-				
-				//Assert.assertTrue(vhidni_title.contains("Вхідні"));
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+		     //
+		      
 				driver.close();
-				//driver.quit();
+				driver.quit();
 	}
 
 }
